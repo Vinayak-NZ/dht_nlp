@@ -1,0 +1,6 @@
+source("R/00_load_packages.R")
+source("R/01_load_functions.R")
+source("R/02_load_data.R")
+source("R/03_process_data.R")
+source("R/04_visualise_data.R")
+source("R/05_analyse_data.R")
