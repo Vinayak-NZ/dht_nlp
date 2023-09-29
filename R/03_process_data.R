@@ -1,17 +1,17 @@
-## ---- create-matrix
+## ---- create-sentiment-matrix
 
 chisquare_input <- matrix(c(app_v1_sentiment$count, 
                           app_v2_sentiment$count), 
                           nrow = 3, 
                           ncol = 2)
 
-## ---- calculate-proportions
+## ---- calculate-sentiment-proportions
 
 app_v1_sentiment$proportion <- (app_v1_sentiment$count/sum(app_v1_sentiment$count))*100
 
 app_v2_sentiment$proportion <- (app_v2_sentiment$count/sum(app_v2_sentiment$count))*100
 
-## ---- append-data
+## ---- append-sentiment-data
 
 app_v1_sentiment$version <- rep("1.0", nrow(app_v1_sentiment))
 
@@ -22,7 +22,7 @@ app_all_sentiment <- rbind(app_v1_sentiment, app_v2_sentiment)
 app_all_sentiment$sentiment <- factor(app_all_sentiment$sentiment, levels = c('positive', 
                                                                               'neutral', 
                                                                               'negative'))
-## ---- chi-square-table
+## ---- sentiment-chi-square-table
 
 chi_square_table <- app_all_sentiment[, c("version", "sentiment", "count")]
 
